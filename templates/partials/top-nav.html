@@ -1,0 +1,70 @@
+{% load static %}
+<style>
+    .nav-background{
+        background-image: url('/static/img/{{nav_image}}');
+        background-color: gray;
+        background-blend-mode:multiply;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+  <div class="container-fluid text-light nav-background">
+    <div class="row justify-content-center align-items-center" style="min-height: 40vh;">
+        <div class="col-md-3 text-center">
+            <h3>DonMax</h3>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <nav class="align-items-center nav justify-content-between text-light">
+                    <span class="d-flex">
+                        <a class="nav-link text-light" href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                        <a class="nav-link text-light" href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a class="nav-link text-light" href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a>
+                        <a class="nav-link text-light" href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                        <a class="nav-link text-light" href="#"><i class="fab fa-youtube" aria-hidden="true"></i></a>
+                        <a class="nav-link text-light" href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    </span>
+                    <span class="text-light">
+                        contact: +2547 9506 7776
+                    </span>    
+                </nav>
+            </div>
+            <hr class="border border-light">
+                <nav class="navbar navbar-expand-md navbar-dark mx-2">
+                    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="collapsibleNavId">
+                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0 text-center">
+                            {% if user.is_staff %}
+                              <li class="nav-item active"><a class="nav-link" target="_blank" href="{% url 'admin:index' %}">Admin</a></li>
+                            {% endif %}
+                            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'wedding' %}">Weddings</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'portfolio' %}">Portfolio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'investments' %}">Investments</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'about-me' %}">About Me</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'clients' %}">Clients</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Vendors</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+                            {% if user.is_authenticated %}
+                              <li class="nav-item"><a class="nav-link" href="{% url 'admin:logout' %}">Logout</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </nav>
+            <hr class="border border-light">
+        </div>
+        <div class="col-md-3 text-center">
+            <img src="{% static 'img/carbon_share.svg' %}" height="40" alt="share">
+        </div>
+    </div>
+    <div class="row justify-content-center py-4">
+        <div class="col-lg=5 text-center text-light">
+            <h2 class="text-uppercase text-underline">{{nav_title}}</h2>
+            <p>{{nav_description}}</p>
+        </div>
+    </div>
+</div>

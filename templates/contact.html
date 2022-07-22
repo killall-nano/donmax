@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block meta %}
+
+{% endblock %}
+{% block title %}Contact{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <p><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ratione sunt, dignissimos cum accusamus, consequatur totam nemo in culpa unde nisi. Obcaecati adipisci dicta quas facilis quasi fugiat sequi quidem!</span><span>Earum placeat qui numquam aspernatur, voluptatibus commodi est quae. Dolorum voluptas, laboriosam corporis ipsum et quam reprehenderit, cum nesciunt, ipsa tempore dolorem! Unde adipisci, commodi minima voluptate expedita deserunt. Nulla.</span></p>
+    <p><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis cumque vitae dolorem aut vel aperiam officiis, perspiciatis fuga dolores, rem veritatis temporibus, deserunt ullam nam adipisci atque provident eos quibusdam.</span><span>Omnis optio reprehenderit dolor odio iure velit asperiores labore soluta non iusto sequi consequatur corporis incidunt nemo nobis repudiandae, eligendi voluptates! Eligendi aliquam et laboriosam dicta error eius, optio necessitatibus?</span></p>
+</div>
+<div class="container my-5 px-3">
+    <div class="row">
+        <div class="col-md-8">
+            <form action="" method="post">
+                <div class="form-group row">
+                    <span class="col-md-6">
+                        <label for="firstName" class="my-3">First name:</label>
+                        <input type="text" name="firstName" id="firstName" class="form-control border-0 border-bottom">
+                    </span>
+                    <span class="col-md-6">
+                        <label for="lastName" class="my-3">Last name:</label>
+                        <input type="text" name="lastName" id="lastName" class="form-control border-0 border-bottom">
+                    </span>
+                </div>
+                <span>
+                    <label for="email" class="my-3">Email:</label>
+                    <input type="email" name="email" id="email" class="form form-control border-0 border-bottom">
+                </span>
+                <span>
+                    <label for="phonenumber" class="my-3">Phonenumber:</label>
+                    <input type="tel" name="phonenumber" id="phonenumber" class="form form-control border-0 border-bottom">
+                </span>
+                <div class="form-group row">
+                    <span class="col-md-6">
+                        <label for="event" class="my-3">Events</label>
+                        <select name="event" id="event" class="form-control border-0 border-bottom">
+                            <option value="">Select Event-type</option>
+                            <option value="birthday">Birthday</option>
+                            <option value="Family Portraits">Family portraits</option>
+                            <option value="Headshots">Headshots</option>
+                            <option value="Maternity">Maternity</option>
+                            <option value="Pre wedding /Engagements">Pre wedding /Engagements</option>
+                            <option value="Traditional wedding">Traditional wedding</option>
+                            <option value="Wedding">Wedding</option>
+                        </select>
+                    </span>
+                    <span class="col-md-6">
+                        <label for="eventDate" class="my-3">Main shoot date</label>
+                        <input type="date" name="eventDate" id="eventDate" class="form-control border-0 border-bottom">
+                    </span>
+                </div>
+                <span>
+                    <label for="budget" class="my-2">Budget: </label>
+                    <input type="number" name="budget" id="budget" class="form-control border-0 border-bottom">
+                </span>
+                <span>
+                    <label for="message" class="my-2">Message:</label>
+                    <textarea class="form-control" name="message" id="message" cols="" rows="7"></textarea>
+                </span>
+                <input type="button" value="Submit" id="submit" class="btn btn-primary my-2">
+            </form>
+        </div>
+        <div class="col-md-4">
+            <h4>Some title</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit doloribus accusantium autem sunt quidem excepturi enim cupiditate ea alias non, repellendus, dolorem distinctio expedita iusto corrupti dignissimos, corporis error unde.</p>
+            <p><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, veritatis harum minus optio error nisi est in rem itaque. Nam quisquam sunt suscipit nesciunt deleniti impedit velit obcaecati voluptatem dignissimos.</span><span>Dolores sunt itaque nobis ipsa doloribus inventore illo asperiores, quo doloremque, tenetur aspernatur, repellat harum. Voluptatum unde quasi ea quod sapiente aliquid, minus et tempora autem natus repellat sequi ullam.</span><span>Eum quam ab amet iure saepe maxime ipsam, praesentium officia fugit quisquam delectus atque facilis culpa aperiam. Ratione officia temporibus totam iste a praesentium perspiciatis molestiae id, iusto porro asperiores.</span></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

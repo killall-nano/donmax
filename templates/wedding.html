@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block meta %}
+
+{% endblock %}
+{% block title %}{% if category %}{{ category.name }}{% else %}Wedding{% endif %}{% endblock %}
+{% block content %}
+<div class="container text-center mt-4">
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea asperiores corrupti modi omnis excepturi impedit, reiciendis neque quia ipsam quae officia consequuntur aperiam facilis magnam explicabo qui voluptatibus! Nemo, dolorum?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel dignissimos dicta perspiciatis quibusdam earum necessitatibus mollitia ipsam aspernatur unde ducimus, cumque dolor pariatur, deserunt doloribus. Expedita obcaecati officiis molestias pariatur?
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, vero. Quod, porro aut! Saepe mollitia dignissimos, vitae hic dolores excepturi earum voluptatibus assumenda. Corporis non repellat odit illum deleniti id.</p>
+</div>
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-xl-8 text-center">
+            <nav class="navbar navbar-light">
+                <a href="{% url 'wedding' %}" class="nav-link {% if not category %}active border-bottom font-weight-bold text-dark{% else %}text-secondary{% endif %}">All</a>
+                {% if categories %}
+                    {% for c in categories %}
+                        <a href="{{c.get_absolute_url}}" class="nav-link {% if category.slug == c.slug  %}active border-bottom font-weight-bold text-dark{% else %}text-secondary{% endif %}">{{c.name}}</a>
+                    {% endfor %}
+                {% endif %}
+            </nav>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <h3 class="py-2">Photos</h3>
+    <div class="row py-4">
+        {% if photos %}
+            {% for photo in photos %}
+            <div class="col-sm-3">
+                <img src="{{photo.image.url}}" alt="{{photo.name}}" title="{{photo.name}}" class="img-fluid">
+            </div>
+            {% endfor %}
+        {% else %}
+            <p class="text-center py-5">No photo available yet</p>
+        {% endif %}      
+    </div>
+    <h3 class="py-2">Videos</h3>
+    <div class="row py-4">
+        {% if videos %}
+            {% for video in videos %}
+            <div class="col-sm-3">
+                <video src="{{video.video.url}}" class="img-fluid" title="{{video.name}}" controls>{{video.name}}</video>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p class="text-center py-5">No video available yet</p>
+        {% endif %} 
+    </div>
+</div>
+{% endblock %}
